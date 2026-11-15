@@ -1,33 +1,22 @@
 AVENTURAS DEL SUR
 
-Este proyecto es una página para un ecoparque. Permite ver las actividades disponibles, reservar un cupo y revisar las reservas. También tiene un panel para administrar las experiencias, categorías y usuarios.
-
-Está hecho con Django y MySQL. Para el diseño usa Bootstrap y para buscar y ordenar las tablas usa DataTables. Hay que tener internet para que carguen esas dos bibliotecas.
-
-Cómo abrir el proyecto
-
-1. Descomprimir la carpeta y abrirla en Visual Studio Code.
-2. Abrir una terminal de PowerShell en la carpeta donde está manage.py.
-3. Crear el entorno e instalar lo necesario:
-
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
 
-4. Tener MySQL funcionando. Abrir en Workbench el archivo .sql que está en respaldos y ejecutarlo para importar la base inventario_aventura. Hacerlo en una instalación de prueba, porque el respaldo puede reemplazar tablas de una base con ese mismo nombre.
-5. Copiar .env.example y cambiar el nombre de la copia a .env. Dentro hay que poner el usuario y la contraseña del MySQL del computador donde se va a probar. El nombre de la base debe ser inventario_aventura. El respaldo no crea el usuario de MySQL, así que se debe usar uno que tenga acceso a esa base.
-6. En la terminal ejecutar:
+Tener MySQL funcionando. Abrir en Workbench el archivo .sql que está en respaldos y ejecutarlo para importar la base inventario_aventura. Hacerlo en una instalación de prueba, porque el respaldo puede reemplazar tablas de una base con ese mismo nombre.
 
+Copiar .env.example y cambiar el nombre de la copia a .env. Dentro hay que poner el usuario y la contraseña del MySQL del computador donde se va a probar. El nombre de la base debe ser inventario_aventura. El respaldo no crea el usuario de MySQL, así que se debe usar uno que tenga acceso a esa base.
+
+En la terminal ejecutar:
 python manage.py migrate
 python manage.py runserver
-
-7. Abrir http://127.0.0.1:8000/ en el navegador.
 
 Cuentas para probar
 
 Todas estas cuentas tienen la contraseña: ParqueSur!2026
 
-admin_demo: administrador
+admin: administrador
 guia_1: guía
 guia_2: guía
 turista_1: turista
@@ -51,12 +40,7 @@ Para comprobar que funciona
 
 Entrar con cada rol y revisar que solo aparezcan sus opciones. Probar crear y editar una experiencia, buscar en las tablas y reservar una actividad. No debe dejar reservar dos veces la misma experiencia ni superar el cupo máximo. Si una actividad tiene fecha pasada o está desactivada, no aparece en el catálogo.
 
+
 También se pueden ejecutar las pruebas con:
-
 python manage.py test --settings=inventarioAventura.test_settings
-
 Estas pruebas usan una base temporal y no cambian los datos guardados en MySQL.
-
-Respaldo
-
-El archivo .sql de la carpeta respaldos contiene las tablas y los datos para importar el proyecto en otro computador. La contraseña local de MySQL no se incluye en la entrega.
