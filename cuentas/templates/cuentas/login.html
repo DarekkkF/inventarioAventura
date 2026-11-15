@@ -1,0 +1,3 @@
+{% extends 'core/base.html' %}{% block contenido %}
+<section class="tarjeta acceso"><p class="etiqueta">BIENVENIDO AL PARQUE</p><h1>Iniciar sesión</h1><p>Ingresa para gestionar tus experiencias y reservas.</p><form method="post" class="formulario">{% csrf_token %}{% include 'core/campos.html' %}<input type="hidden" name="next" value="{{ next }}"><button class="btn btn-primario w-100">Ingresar</button></form><p class="mt-4">¿Primera visita? <a href="{% url 'cuentas:registro' %}">Crea tu cuenta de turista</a>.</p></section>
+{% endblock %}

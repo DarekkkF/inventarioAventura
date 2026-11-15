@@ -1,0 +1,4 @@
+{% extends 'core/base.html' %}{% block contenido %}
+<div class="encabezado con-accion"><div><p class="etiqueta">CATÁLOGO</p><h1>Categorías</h1><p>Organiza las actividades del parque.</p></div><a class="btn btn-primario" href="{% url 'experiencias:categoria_crear' %}">Crear categoría</a></div>
+<section class="tarjeta table-responsive"><table class="table tabla-datos"><thead><tr><th>Nombre</th><th>Descripción</th><th>Estado</th><th class="sin-orden">Acciones</th></tr></thead><tbody>{% for objeto in object_list %}<tr><td>{{ objeto.nombre }}</td><td>{{ objeto.descripcion }}</td><td>{{ objeto.activo|yesno:'Activa,Inactiva' }}</td><td><a href="{% url 'experiencias:categoria_editar' objeto.pk %}">Editar</a> · <a class="text-danger" href="{% url 'experiencias:categoria_eliminar' objeto.pk %}">Eliminar</a></td></tr>{% endfor %}</tbody></table></section>
+{% endblock %}

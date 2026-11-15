@@ -1,0 +1,6 @@
+{% extends 'core/base.html' %}{% load roles %}
+{% block contenido %}
+<div class="encabezado"><p class="etiqueta">TU ACTIVIDAD EN EL PARQUE</p><h1>Bienvenido, {{ user.first_name|default:user.username }}.</h1><p>Todo lo que necesitas para organizar tu próxima jornada.</p></div>
+<div class="indicadores">{% for titulo, cantidad in indicadores %}<article class="tarjeta"><p>{{ titulo }}</p><strong class="cifra">{{ cantidad }}</strong></article>{% endfor %}</div>
+<section class="tarjeta siguiente"><h2>¿Por dónde empezamos?</h2>{% if user|es_admin %}<p>Administra el catálogo, los usuarios y las reservas del parque.</p><a class="btn btn-primario" href="{% url 'experiencias:lista' %}">Gestionar experiencias</a>{% elif user.rol == 'guia' %}<p>Prepara una nueva actividad o actualiza las experiencias que has creado.</p><a class="btn btn-primario" href="{% url 'experiencias:crear' %}">Crear experiencia</a>{% else %}<p>Encuentra una actividad disponible y asegura tu lugar.</p><a class="btn btn-primario" href="{% url 'experiencias:catalogo' %}">Explorar el catálogo</a>{% endif %}</section>
+{% endblock %}

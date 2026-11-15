@@ -1,0 +1,3 @@
+{% extends 'core/base.html' %}{% block contenido %}
+<section class="tarjeta acceso"><p class="etiqueta">TU PRÓXIMA EXPERIENCIA</p><h1>Crear cuenta</h1><p>Regístrate como turista para reservar actividades.</p><form method="post" class="formulario">{% csrf_token %}{% include 'core/campos.html' %}<button class="btn btn-primario w-100">Crear mi cuenta</button></form></section>
+{% endblock %}

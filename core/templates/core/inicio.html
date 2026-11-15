@@ -1,0 +1,8 @@
+{% extends 'core/base.html' %}
+{% block contenido %}
+<section class="hero">
+  <div class="hero-texto"><p class="etiqueta">EXPLORA · RESPIRA · DESCUBRE</p><h1>Tu próxima aventura<br>comienza en el sur.</h1><p>Recorre senderos, navega entre paisajes y descubre nuevas experiencias al aire libre en nuestra reserva natural.</p><a class="btn btn-primario btn-lg" href="{% url 'experiencias:catalogo' %}">Descubrir experiencias</a></div>
+  <div class="paisaje" role="img" aria-label="Ilustración de montañas, bosque y sol"><div class="sol"></div><div class="montana fondo"></div><div class="montana frente"></div><span>AVENTURAS DEL SUR<br><small>Naturaleza que se vive.</small></span></div>
+</section>
+<section class="introduccion"><p class="etiqueta">ENCUENTRA TU RITMO</p><h2>Un parque, muchas formas de explorarlo.</h2><div class="rejilla"><article class="tarjeta"><span class="numero">01</span><h3>Tierra y senderos</h3><p>Descubre nuestras rutas de trekking y disfruta el camino a tu ritmo.</p></article><article class="tarjeta"><span class="numero">02</span><h3>Agua y movimiento</h3><p>Explora las actividades de kayak y encuentra una nueva perspectiva.</p></article><article class="tarjeta"><span class="numero">03</span><h3>Altura y aventura</h3><p>Consulta las experiencias de canopy y las opciones de equipos disponibles.</p></article></div></section>
+{% endblock %}

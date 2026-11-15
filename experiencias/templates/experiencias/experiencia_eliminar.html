@@ -1,0 +1,3 @@
+{% extends 'core/base.html' %}{% block contenido %}
+<section class="tarjeta acceso"><p class="etiqueta">CONFIRMAR ELIMINACIÓN</p><h1>Eliminar experiencia</h1><p>¿Deseas eliminar <strong>{{ object }}</strong>?</p><p>También se eliminarán sus reservas asociadas.</p><form method="post">{% csrf_token %}<div class="acciones"><button class="btn btn-danger">Eliminar</button><a class="btn btn-outline-secondary" href="{% url 'experiencias:lista' %}">Cancelar</a></div></form></section>
+{% endblock %}

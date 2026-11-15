@@ -1,0 +1,4 @@
+{% extends 'core/base.html' %}{% block contenido %}
+<div class="encabezado"><p class="etiqueta">ADMINISTRACIÓN DEL PARQUE</p><h1>{% if object %}Editar{% else %}Crear{% endif %} usuario</h1><p>Completa los datos. Los campos con asterisco son obligatorios.</p></div>
+<section class="tarjeta formulario-contenedor"><form method="post" class="formulario">{% csrf_token %}{% include 'core/campos.html' %}<div class="acciones"><button class="btn btn-primario">Guardar</button><a class="btn btn-outline-secondary" href="{% url 'cuentas:usuarios' %}">Cancelar</a></div></form></section>
+{% endblock %}
